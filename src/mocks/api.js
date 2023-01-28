@@ -22,7 +22,7 @@ const authenticator = (req, res, next) => {
 
 //Get All Articles Endpoint
 api.post('/api/login', (req, res) => {
-  const {username, password, role, token}  = credentials;
+  const { username, password, role, token } = credentials;
 
   if (username === req.body.username && password === req.body.password) {
     res.json({
@@ -37,7 +37,7 @@ api.post('/api/login', (req, res) => {
 })
 
 api.post('/api/logout', authenticator, (req, res) => {
-  const {username, role, token}  = credentials;
+  const { username, role, token } = credentials;
   res.json({
     username,
     role,
